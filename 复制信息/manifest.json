@@ -1,0 +1,33 @@
+{
+  "manifest_version": 3,
+  "name": "个人信息助手 (最终版)",
+  "version": "7.0",
+  "description": "侧边悬浮、气泡预览、一键复制",
+  "permissions": [
+    "storage"
+  ],
+  "icons": {
+    "16": "icons/16.png",
+    "48": "icons/48.png",
+    "64": "icons/64.png",
+    "128": "icons/128.png"
+  },
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "配置信息",
+    "default_icon": {
+      "16": "icons/16.png",
+      "48": "icons/48.png",
+      "64": "icons/64.png",
+      "128": "icons/128.png"
+    }
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"],
+      "run_at": "document_start",
+      "all_frames": false
+    }
+  ]
+}

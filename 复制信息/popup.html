@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <style>
+    body { width: 360px; margin: 0; font-family: sans-serif; background: #f8fafc; color: #334155; }
+    .header { padding: 12px; background: white; border-bottom: 1px solid #e2e8f0; font-weight: bold; color: #0f172a; text-align: center; }
+    
+    /* 工具栏回归 */
+    .toolbar { padding: 10px 15px; background: white; display: flex; gap: 8px; border-bottom: 1px solid #f1f5f9; }
+    select { flex: 1; padding: 6px; border: 1px solid #cbd5e1; border-radius: 6px; outline: none; }
+    .btn-icon { width: 30px; height: 30px; border: 1px solid #e2e8f0; background: white; border-radius: 6px; cursor: pointer; color: #64748b; }
+    .btn-icon:hover { background: #f1f5f9; color: #0f172a; }
+    .btn-icon.danger:hover { background: #fef2f2; color: #ef4444; border-color: #fca5a5; }
+
+    #items-list { padding: 15px; max-height: 350px; overflow-y: auto; }
+    .row-card { background: white; padding: 8px; margin-bottom: 8px; display: flex; gap: 8px; border: 1px solid #e2e8f0; border-radius: 6px; align-items: center; }
+    input { background: #f8fafc; border: 1px solid transparent; padding: 6px; border-radius: 4px; font-size: 13px; outline: none; }
+    input:focus { background: white; border-color: #3b82f6; }
+    .inp-label { width: 65px; font-weight: bold; color: #64748b; }
+    .inp-value { flex: 1; }
+    .btn-del { border: none; background: transparent; color: #cbd5e1; cursor: pointer; font-size: 18px; }
+    .btn-del:hover { color: #ef4444; }
+    
+    .footer { padding: 15px; border-top: 1px solid #e2e8f0; background: white; }
+    .btn-main { width: 100%; padding: 10px; background: #3b82f6; color: white; border: none; border-radius: 6px; cursor: pointer; font-weight: bold; }
+    .btn-main:hover { background: #2563eb; }
+    .reset { text-align: center; margin-top: 10px; font-size: 12px; color: #94a3b8; cursor: pointer; text-decoration: underline; }
+    .reset:hover { color: #ef4444; }
+  </style>
+</head>
+<body>
+  <div class="header">全能信息助手 V14.0</div>
+  
+  <!-- 完整的工具栏 -->
+  <div class="toolbar">
+    <select id="tpl-select"></select>
+    <button id="add-tpl" class="btn-icon" title="新建模板">＋</button>
+    <button id="rename-tpl" class="btn-icon" title="重命名">✎</button>
+    <button id="del-tpl" class="btn-icon danger" title="删除">🗑</button>
+  </div>
+
+  <div id="items-list"></div>
+  
+  <div class="footer">
+    <button id="add-item" class="btn-main">+ 添加一行</button>
+    <div id="btn-reset" class="reset">重置为单列完整数据</div>
+  </div>
+  <script src="popup.js"></script>
+</body>
+</html>
